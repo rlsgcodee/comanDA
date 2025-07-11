@@ -84,4 +84,16 @@ INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (1, 3);
 INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (2, 1);
 INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (2, 2);
 </code></pre>
+<h2>📦 Dependencias y Librerías Clave</h2>
+<ul>
+  <li><strong>Spring Boot Starter Web:</strong> Desarrollo de API REST con servidor embebido Tomcat</li>
+  <li><strong>Spring Boot Starter Data JPA:</strong> Acceso a base de datos y capacidades ORM</li>
+  <li><strong>Spring Boot Starter Security:</strong> Framework de autenticación y autorización</li>
+  <li><strong>Spring Boot Starter Validation:</strong> Soporte para validación de solicitudes</li>
+  <li><strong>MySQL Connector:</strong> Conectividad con bases de datos MySQL</li>
+  <li><strong>MapStruct 1.5.5:</strong> Mapeo entre DTOs y entidades</li>
+  <li><strong>Lombok 1.18.24:</strong> Generación de código para reducir boilerplate</li>
+  <li><strong>Auth0 Java JWT 4.4.0:</strong> Implementación de JSON Web Tokens para autenticación</li>
+  <li><strong>SpringDoc OpenAPI 2.8.9:</strong> Generación de documentación de la API</li>
+</ul>
 
