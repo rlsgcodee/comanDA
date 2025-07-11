@@ -40,7 +40,6 @@ SECRET_KEY=tu_clave_secreta_para_jwt
     <pre>git clone https://github.com/tu_usuario/tu_repositorio.git
 cd tu_repositorio</pre>
   </li>
-  <li>Configurar las variables de entorno según corresponda.</li>
   <li>Construir el proyecto con Maven o Gradle (según corresponda):
     <pre>./mvnw clean install
 -- o --
