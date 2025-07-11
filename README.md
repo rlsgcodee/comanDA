@@ -63,3 +63,25 @@ java -jar target/nombre-del-jar.jar</pre>
     <pre>http://localhost:8080/swagger-ui.html</pre>
   </li>
 </ol>
+<h2>Datos iniciales requeridos (seeding)</h2>
+<p>Para que la aplicación funcione correctamente, es necesario insertar algunos roles y permisos básicos en la base de datos:</p>
+
+<h3>🎯 Inserts de roles</h3>
+<pre><code>INSERT INTO comanda.role_entity (role_enum) VALUES ('MOZO');
+INSERT INTO comanda.role_entity (role_enum) VALUES ('ADMIN');
+</code></pre>
+
+<h3>🔐 Inserts de permisos</h3>
+<pre><code>INSERT INTO comanda.permission_entity (name) VALUES ('READ_');
+INSERT INTO comanda.permission_entity (name) VALUES ('WRITE_');
+INSERT INTO comanda.permission_entity (name) VALUES ('DELETE_');
+</code></pre>
+
+<h3>🔗 Asociación de roles y permisos</h3>
+<pre><code>INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (1, 1);
+INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (1, 2);
+INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (1, 3);
+INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (2, 1);
+INSERT INTO comanda.role_permissions (role_id, permission_id) VALUES (2, 2);
+</code></pre>
+
