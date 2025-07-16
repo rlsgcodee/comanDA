@@ -1,5 +1,6 @@
 package com.comanDaBack.comanDa.mapper;
 
+import com.comanDaBack.comanDa.dto.AdministradorResponseDTO;
 import com.comanDaBack.comanDa.dto.AdministradorRequestDTO;
 import com.comanDaBack.comanDa.entity.Administrador;
 import com.comanDaBack.comanDa.security.entity.Usuario;
@@ -20,4 +21,6 @@ public interface AdministradorRequestMapper {
     @Mapping(target = "isCredentialNonExpired", constant = "true")
     @Mapping(target = "isAccountNonLocked", constant = "true")
     Usuario toUsuario(AdministradorRequestDTO administradorRequestDTO);
+
+
 }

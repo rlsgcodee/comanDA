@@ -1,12 +1,12 @@
 package com.comanDaBack.comanDa.service;
 
 
-import com.comanDaBack.comanDa.dto.AdministradorDTO;
+import com.comanDaBack.comanDa.dto.AdministradorResponseDTO;
 import com.comanDaBack.comanDa.dto.AdministradorRequestDTO;
 import com.comanDaBack.comanDa.entity.Administrador;
 import com.comanDaBack.comanDa.exception.custom.DuplicadoException;
 import com.comanDaBack.comanDa.exception.custom.NotFoundException;
-import com.comanDaBack.comanDa.mapper.AdministradorMapper;
+import com.comanDaBack.comanDa.mapper.AdministradorResponseMapper;
 import com.comanDaBack.comanDa.mapper.AdministradorRequestMapper;
 import com.comanDaBack.comanDa.repository.AdministradorRepository;
 import com.comanDaBack.comanDa.security.entity.Role;
@@ -26,16 +26,18 @@ public class AdministradorServiceImpl implements AdministradorService {
     private final AdministradorRepository administradorRepository;
     private final UserRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
-    private final AdministradorMapper administradorMapper;
+    private final AdministradorResponseMapper administradorResponseMapper;
     private final AdministradorRequestMapper administradorRequestMapper;
     private final RoleRepository roleRepository;
 
 
     @Override
     @Transactional
-    public AdministradorDTO crearAdministrador(AdministradorRequestDTO dto) {
+    public AdministradorResponseDTO crearAdministrador(AdministradorRequestDTO dto) {
         if (administradorRepository.count() > 0) {
             throw new IllegalStateException("Ya existe un administrador en el sistema");
+        }if (dto.getCuit() == null || dto.getCuit().length() != 11){
+            throw new DuplicadoException("El cuit debe tener 11 digitos");
         }
 
         validarUsername(dto.getUsername());
@@ -54,7 +56,7 @@ public class AdministradorServiceImpl implements AdministradorService {
         administrador.setFechaAlta(LocalDateTime.now());
 
         Administrador administradorGuardado = administradorRepository.save(administrador);
-        return administradorMapper.toDTO(administradorGuardado);
+        return administradorResponseMapper.toDTO(administradorGuardado);
     }
 
 

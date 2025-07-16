@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdministradorDTO {
+public class AdministradorResponseDTO {
 
     private Long idAdmin;
     private String nombreBar;
@@ -19,5 +19,5 @@ public class AdministradorDTO {
     private LocalDateTime fechaAlta;
     private String email;
     private boolean esActivo;
-    private UsuarioDTO idUsuario;
+    private Long idUsuario;
 }

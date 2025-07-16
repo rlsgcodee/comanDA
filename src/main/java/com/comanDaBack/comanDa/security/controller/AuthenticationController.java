@@ -1,7 +1,7 @@
 package com.comanDaBack.comanDa.security.controller;
 
 
-import com.comanDaBack.comanDa.dto.AdministradorDTO;
+import com.comanDaBack.comanDa.dto.AdministradorResponseDTO;
 import com.comanDaBack.comanDa.dto.AdministradorRequestDTO;
 import com.comanDaBack.comanDa.security.dto.AuthLoginRequest;
 import com.comanDaBack.comanDa.security.dto.AuthResponse;
@@ -78,7 +78,7 @@ public class AuthenticationController {
                             description = "Administrador creado exitosamente",
                             content = @Content(
                                     mediaType = "application/json",
-                                    schema = @Schema(implementation = AdministradorDTO.class)
+                                    schema = @Schema(implementation = AdministradorResponseDTO.class)
                             )
                     ),
                     @ApiResponse(
@@ -87,11 +87,11 @@ public class AuthenticationController {
                     )
             }
     )
-    public ResponseEntity<AdministradorDTO> registrarAdmin(@RequestBody @Valid AdministradorRequestDTO administradorRequestDTO) {
+    public ResponseEntity<AdministradorResponseDTO> registrarAdmin(@RequestBody @Valid AdministradorRequestDTO administradorRequestDTO) {
         if (administradorService.existeAdministrador()) {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Ya existe un administrador registrado");
         }
-        AdministradorDTO creado = administradorService.crearAdministrador(administradorRequestDTO);
+        AdministradorResponseDTO creado = administradorService.crearAdministrador(administradorRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 

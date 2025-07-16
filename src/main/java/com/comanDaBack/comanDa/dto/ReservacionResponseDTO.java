@@ -14,5 +14,5 @@ public class ReservacionResponseDTO {
     private LocalDateTime fechaHora;
     private String descripcion;
     private EstadoMesa estadoMesa;
-    private MesaResponseDTO numMesa;
+    private int numMesa;
 }
