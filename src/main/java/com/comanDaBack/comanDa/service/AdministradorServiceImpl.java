@@ -4,7 +4,6 @@ package com.comanDaBack.comanDa.service;
 import com.comanDaBack.comanDa.dto.AdministradorDTO;
 import com.comanDaBack.comanDa.dto.AdministradorRequestDTO;
 import com.comanDaBack.comanDa.entity.Administrador;
-import com.comanDaBack.comanDa.entity.Mozo;
 import com.comanDaBack.comanDa.exception.custom.DuplicadoException;
 import com.comanDaBack.comanDa.exception.custom.NotFoundException;
 import com.comanDaBack.comanDa.mapper.AdministradorMapper;
@@ -19,7 +18,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 
 @Service

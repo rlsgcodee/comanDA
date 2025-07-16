@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.time.LocalDateTime;
 
 @Entity
@@ -23,7 +22,6 @@ public class Reservacion {
 
     @Enumerated(EnumType.STRING)
     private EstadoMesa estadoMesa = EstadoMesa.RESERVADA;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_mesa")
